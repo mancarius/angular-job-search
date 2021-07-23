@@ -1,0 +1,5 @@
+<div class="flex justify-between items-center">
+  <button id="goToPrevPageBtn" (click)="goToPrevPage()" [disabled]="(page === 1)">← Previous</button>
+  <span>Page {{page}} of {{pageCount}}</span>
+  <button id="goToNextPageBtn" (click)="goToNextPage()" [disabled]="(page === pageCount)">Next →</button>
+</div>

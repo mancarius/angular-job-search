@@ -1,0 +1,11 @@
+h2 {
+    @apply my-2 block;
+}
+
+.company > a {
+    color: initial !important;
+}
+
+.company > a:hover {
+    text-decoration: none !important;
+}

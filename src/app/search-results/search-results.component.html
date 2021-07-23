@@ -1,0 +1,12 @@
+<div class="relative">
+    <div *ngIf="isLoading" class="flex justify-center items-center p-5">
+        <mat-spinner></mat-spinner>
+    </div>
+    <ul *ngIf="!isLoading && items.length">
+        <app-results-item *ngFor="let item of items" [item]="item"></app-results-item>
+    </ul>
+    <div *ngIf="!isLoading && !items.length" class="flex justify-center items-center flex-col mt-40">
+        <p class="text-xl mb-3">Ops! Looks like your job not exist jet...</p>
+        <p class="text-gray-500">Please, try again with different filters</p>
+    </div>
+</div>

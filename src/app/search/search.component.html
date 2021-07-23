@@ -1,0 +1,3 @@
+<app-filters [inputFilters]="filters"></app-filters>
+<app-search-results [items]="JobsList" [isLoading]="isLoading"></app-search-results>
+<app-paginator *ngIf="JobsList.length && !isLoading" [page]="filters?.page ?? 0" [pageCount]="pageCount" (goToPage)="goToPage($event)"></app-paginator>

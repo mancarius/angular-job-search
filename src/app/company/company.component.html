@@ -1,0 +1,32 @@
+<article class="pb-5">
+    <header [ngStyle]="{'background-image':'linear-gradient(0deg, #fafafa3d 0%, #fafafab8 50%), url('+company?.refs?.f1_image+')'}">
+        <h1 class="font-bold text-6xl text-blue-700">{{company?.name}}</h1>
+        <p class="text-gray-500">{{company?.description}}</p>
+    </header>
+    <div class="company-details">
+        <div class="flex-1 bg-gray-200 p-4 rounded">
+            <h3>Industries</h3>
+            <p>{{industriesList().join(', ')}}</p>
+        </div>
+        <div class="flex-1 bg-gray-200 p-4 rounded">
+            <h3>Locations</h3>
+            <ng-template #popContent>
+                <ul class="bg-white">
+                    <li *ngFor="let location of locationsList() | slice:1">{{location}}</li>
+                </ul>
+            </ng-template>
+            <p>{{locationsList()[0]}} 
+                <a href="javascript:void()" class="text-blue-500 cursor-pointer" *ngIf="locationsList().length > 1" [ngbPopover]="popContent">+{{locationsList().length -1}} more</a>
+            </p>
+        </div>
+        <div class="flex-1 bg-gray-200 p-4 rounded">
+            <h3>Size</h3>
+            <p>{{companySize()}}</p>
+        </div>
+    </div>
+
+    <a href={{company?.refs?.landing_page}}
+        class="bg-blue-700 p-4 rounded text-center my-5 max-w-sm text-white mx-auto sm:mx-2 block">
+        See more on themuse.com
+    </a>
+</article>

@@ -1,0 +1,43 @@
+<div class="relative p-1">
+  <div [class.hidden]="!modalOpen" class="form-container absolute top-0 left-0 right-0 z-10">
+    <form [formGroup]="filtersForm" (ngSubmit)="submit();closeModal()" class="filter-form flex flex-col align-items-center bg-white shadow-md">
+      <div class="p-2  w-full">
+        <label class="block mb-2" for="location-filter">Location</label>
+        <input type="text" formControlName="location" id="location-filter" class="w-full rounded">
+      </div>
+      <div class="p-2 py-4 flex justify-between md:justify-start w-full">
+        <label class="block cursor-pointer">
+          <input type="checkbox" id="entry-level-filter" value="Entry Level" formControlName="entryLevel"> Entry Level
+        </label>
+        <label class="block cursor-pointer md:ml-4">
+          <input type="checkbox" id="mid-level-filter" value="Mid Level" formControlName="midLevel"> Mid Level
+        </label>
+        <label class="block cursor-pointer md:ml-4">
+          <input type="checkbox" id="senior-level-filter" value="Senior Level" formControlName="seniorLevel"> Senior
+          Level
+        </label>
+      </div>
+      <div class="p-2 w-full">
+        <label class="cursor-pointer">
+          <input type="checkbox" value="remote" formControlName="remote"> Flexible / Remote
+        </label>
+      </div>
+      <div class="self-center">
+        <input type="submit" class="cursor-pointer p-2 m-2 rounded bg-blue-700 text-white md:w-52"
+          value="Apply filters">
+        <input type="button" class="cursor-pointer p-2 m-2 rounded text-gray md:w-52" value="Close"
+          (click)="closeModal()">
+      </div>
+    </form>
+  </div>
+  <mat-chip-list class="filter-chips" aria-label="Fish selection">
+    <mat-chip (click)="openModal()" >
+      Filters <mat-icon>filter_list</mat-icon>
+    </mat-chip>
+    <mat-chip [removable]="removable" (removed)="removeFilterFromFormAndReload(filter)"
+      *ngFor="let filter of filtersList">
+      {{filter}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+</div>

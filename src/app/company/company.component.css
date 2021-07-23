@@ -1,0 +1,49 @@
+header {
+    background-position: top;
+    min-height: 20rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @apply rounded p-5 my-7 pt-7;
+}
+
+header > p {
+    @apply text-xl mt-3 italic;
+}
+
+.company-details {
+    display:flex;
+    flex-direction: column;
+}
+
+@media (min-width: 640px)  {
+    .company-details {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 640px)  {
+    .company-details > * {
+        @apply mb-4;
+    }
+}
+
+.company-details > *:last-child {
+    @apply mb-0;
+}
+
+@media (min-width: 640px)  {
+    .company-details > * {
+        @apply mr-4;
+    }
+
+    .company-details > *:last-child {
+        @apply mr-0;
+    }
+}
+
+.company-details h3 {
+    @apply uppercase text-sm text-gray-600;
+}
+
+.company-details h3 + p {
+}
