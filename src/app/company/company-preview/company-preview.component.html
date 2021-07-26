@@ -1,7 +1,7 @@
 <article *ngIf="company !== undefined" class="company-preview-container flex flex-column items-center cursor-pointer md:rounded-2xl shadow hover:shadow-md overflow-hidden">
     <img src="{{company?.refs?.logo_image}}" alt="{{company?.name}}'s Logo" />
     <div class="p-3 w-full bg-gray-50">
-        <h2>{{company?.name}}</h2>
+        <h2 class="font-bold">{{company?.name}}</h2>
         <div class="text-gray-500 mr-2">
             <p>
                 <mat-icon aria-hidden="false" aria-label="Industries icon" class="mr-2 text-gray-500">business_center</mat-icon>
