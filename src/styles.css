@@ -17,7 +17,7 @@ button {
     @apply cursor-pointer p-2 m-2 rounded bg-blue-700 text-white md:w-52 self-center;
 }
 
-h3 {
+h2, h3 {
     @apply my-3;
 }
 
