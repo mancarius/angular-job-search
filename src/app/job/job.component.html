@@ -13,7 +13,7 @@
 </div>
 <div [innerHTML]="job?.contents" class="p-2"></div>
 </article>
-<article class="company flex justify-center w-full">
+<article class="company flex justify-center w-full mt-10">
     <a [routerLink]="['/companies', job?.company?.id]" class="block max-w-lg">
         <app-company-preview [companyId]="job?.company?.id"></app-company-preview>
     </a>
