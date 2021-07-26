@@ -17,6 +17,9 @@ button {
     @apply cursor-pointer p-2 m-2 rounded bg-blue-700 text-white md:w-52 self-center;
 }
 
+h3 {
+    @apply my-3;
+}
 
 button[disabled] {
     background-color: #aaa;
@@ -35,4 +38,8 @@ input[type='text'] {
     display: flex;
     flex-flow: column;
     min-height: 100%;
+}
+
+p {
+    @apply py-2;
 }
