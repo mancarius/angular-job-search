@@ -1,5 +1,5 @@
 <li class="my-6 md:rounded-2xl shadow p-4 cursor-pointer" (click)="openJob(item.id)">
     <h2 class="font-light text-2xl">{{item.name}}</h2>
-    <p>At <a href="/companies/{{item.company.id}}">{{item.company.name}}</a> - <span>{{locations}}</span></p>
+    <p>At <a [routerLink]="['/companies/', item.company.id]">{{item.company.name}}</a> - <span>{{locations}}</span></p>
     <p>Posted on {{item.publication_date | date}}</p>
 </li>
